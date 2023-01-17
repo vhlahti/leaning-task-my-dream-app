@@ -1,8 +1,19 @@
 <section class="app-servers">
-<h1>I'm in the Servers Component</h1>
-<p>Below this I have 2 Server Components</p>
-<app-server></app-server>
-<app-server></app-server>
-<!-- <section class="app-server"></section> -->
-<!-- <section class="app-server"></section> -->
+    <label>Server name</label><br>
+    <!-- <input
+        type="text"
+        class="form-control"
+        (input)="onUpdateServerName($event)"><br>-->
+    <input 
+        type="text"
+        class="form-control"
+        [(ngModel)]="serverName"><br>
+    <button
+        class="btn btn-primary"
+        [disabled] = "!allowNewServer"
+        (click)="onCreateServer()">Add Server</button>
+    <hr>
+    <!-- <p class="sisennys">{{ serverName }}</p> -->
+    <p class="sisennys">{{ serverCreationStatus }}</p>
+    <app-server></app-server>
 </section>
